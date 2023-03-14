@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-image: linear-gradient(black,gray);
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            width: 400px;
+            height: 450px;
+            background-image: linear-gradient(black,blue);
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px black;
+            position: relative;
+            /* right: 200px; */
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            transition: box-shadow 1s;
+        }
+        #container:hover{
+            box-shadow: 10px 10px 10px brown,-10px -10px 10px brown,10px -10px 10px brown,-10px 10px 10px brown;
+        }
+        #display{
+            width: 340px;
+            height: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            position: relative;
+            font-size: 20px;
+            top: 25px;
+            left: 25px;
+            border-radius: 5px;
+            background-color: purple;
+            border: none;
+            outline: none;
+            box-shadow: 4px 4px 5px black;
+        }
+        .a{
+            width: 70px;
+            height: 50px;
+            position: relative;
+            top: 30px;
+            left: 55px;
+            border-radius: 5px;
+            background-color:aqua;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 1px 1px 3px black;
+        }
+        .a:hover{
+            background-color:slateblue;
+        }
+        #b{
+            width: 120px;
+            margin-left: 15px;
+        }
+        h1{
+            font-size: 100px;
+            opacity: 0.5;
+            z-index: 5;
+            position: absolute;
+            bottom: 150px;
+            z-index: 0;            
+        }
+        #first{
+          position: absolute;
+          left: -190px;
+          font-style: italic;
+        }
+        form{
+            z-index: 1;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form name="calc">
+            <h1 id="first">Calc</h1>
+            <h1 id="second">ulator</h1>
+            <input id="display" name="Answer">
+            <br><br>
+            <input type="button" class="a" value="1" onclick="calc.Answer.value += '1'">
+            <input type="button" class="a" value="2" onclick="calc.Answer.value += '2'">
+            <input type="button" class="a" value="3" onclick="calc.Answer.value += '3'">
+            <input type="button" class="a" value="+" onclick="calc.Answer.value += '+'">
+            <br><br>
+            <input type="button" class="a" value="4" onclick="calc.Answer.value += '4'">
+            <input type="button" class="a" value="5" onclick="calc.Answer.value += '5'">
+            <input type="button" class="a" value="6" onclick="calc.Answer.value += '6'">
+            <input type="button" class="a" value="-" onclick="calc.Answer.value += '-'">
+            <br><br>
+            <input type="button" class="a" value="7" onclick="calc.Answer.value += '7'">
+            <input type="button" class="a" value="8" onclick="calc.Answer.value += '8'">
+            <input type="button" class="a" value="9" onclick="calc.Answer.value += '9'">
+            <input type="button" class="a" value="*" onclick="calc.Answer.value += '*'">
+            <br><br>
+            <input type="button" class="a" value="/" onclick="calc.Answer.value += '/'">
+            <input type="button" class="a" value="0" onclick="calc.Answer.value += '0'">
+            <input type="button" class="a" value="." onclick="calc.Answer.value += '.'">
+            <input type="button" class="a" value="%" onclick="calc.Answer.value += '%'">
+            <br><br>
+            <input type="button" class="a" id="b" value="Clear" onclick="calc.Answer.value = ' '">
+            <input type="button" class="a" id="b" value="=" onclick="calc.Answer.value = eval(calc.Answer.value)">
+        </form>
+    </div>
+</body>
+</html>
